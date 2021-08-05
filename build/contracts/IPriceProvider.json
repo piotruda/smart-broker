@@ -1,0 +1,495 @@
+{
+  "contractName": "IPriceProvider",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_asset",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllAssets",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getAllAssets\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_asset\",\"type\":\"bytes32\"}],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface that provides current price in AVAX for a given asset\",\"kind\":\"dev\",\"methods\":{\"getPrice(bytes32)\":{\"details\":\"_asset the address of the queried asset*\"}},\"title\":\"IPriceProvider\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getAllAssets()\":{\"notice\":\"Returns all the supported assets*\"},\"getPrice(bytes32)\":{\"notice\":\"Returns the current price of an asset\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IPriceProvider.sol\":\"IPriceProvider\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IPriceProvider.sol\":{\"keccak256\":\"0xecab2c8456e8cc001fff8781d9c6ae45a97cb3004e8a157ded3bb3a69fb618e9\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://cc1358e3c39307986ff10a464ae57fa15b847a7bad7332bb6fb959acd87e36ab\",\"dweb:/ipfs/QmRdToGem55BNPio4GSNB4bCJdsRJQ3tKtNUYuK48javn9\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.2;\n\n/**\n * @title IPriceProvider\n * @dev Interface that provides current price in AVAX for a given asset\n */\ninterface IPriceProvider {\n\n  /**\n   * Returns the current price of an asset\n   * @dev _asset the address of the queried asset\n  **/\n  function getPrice(bytes32 _asset) external view returns(uint256);\n\n\n  /**\n   * Returns all the supported assets\n  **/\n  function getAllAssets() external view returns(bytes32[] memory);\n\n}\n",
+  "sourcePath": "/Users/apple/Redstone/smart-broker/contracts/IPriceProvider.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IPriceProvider.sol",
+    "exportedSymbols": {
+      "IPriceProvider": [
+        9611
+      ]
+    },
+    "id": 9612,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9594,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:15"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9595,
+          "nodeType": "StructuredDocumentation",
+          "src": "64:104:15",
+          "text": " @title IPriceProvider\n @dev Interface that provides current price in AVAX for a given asset"
+        },
+        "fullyImplemented": false,
+        "id": 9611,
+        "linearizedBaseContracts": [
+          9611
+        ],
+        "name": "IPriceProvider",
+        "nameLocation": "179:14:15",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 9596,
+              "nodeType": "StructuredDocumentation",
+              "src": "199:102:15",
+              "text": " Returns the current price of an asset\n @dev _asset the address of the queried asset*"
+            },
+            "functionSelector": "31d98b3f",
+            "id": 9603,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nameLocation": "313:8:15",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9599,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9598,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "330:6:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9603,
+                  "src": "322:14:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9597,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:16:15"
+            },
+            "returnParameters": {
+              "id": 9602,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9601,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9603,
+                  "src": "360:7:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9600,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "360:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "359:9:15"
+            },
+            "scope": 9611,
+            "src": "304:65:15",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9604,
+              "nodeType": "StructuredDocumentation",
+              "src": "374:47:15",
+              "text": " Returns all the supported assets*"
+            },
+            "functionSelector": "2acada4d",
+            "id": 9610,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllAssets",
+            "nameLocation": "433:12:15",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9605,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "445:2:15"
+            },
+            "returnParameters": {
+              "id": 9609,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9608,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9610,
+                  "src": "470:16:15",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 9606,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "470:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 9607,
+                    "nodeType": "ArrayTypeName",
+                    "src": "470:9:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "469:18:15"
+            },
+            "scope": 9611,
+            "src": "424:64:15",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9612,
+        "src": "169:322:15",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:453:15"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IPriceProvider.sol",
+    "exportedSymbols": {
+      "IPriceProvider": [
+        9611
+      ]
+    },
+    "id": 9612,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9594,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:15"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9595,
+          "nodeType": "StructuredDocumentation",
+          "src": "64:104:15",
+          "text": " @title IPriceProvider\n @dev Interface that provides current price in AVAX for a given asset"
+        },
+        "fullyImplemented": false,
+        "id": 9611,
+        "linearizedBaseContracts": [
+          9611
+        ],
+        "name": "IPriceProvider",
+        "nameLocation": "179:14:15",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 9596,
+              "nodeType": "StructuredDocumentation",
+              "src": "199:102:15",
+              "text": " Returns the current price of an asset\n @dev _asset the address of the queried asset*"
+            },
+            "functionSelector": "31d98b3f",
+            "id": 9603,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nameLocation": "313:8:15",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9599,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9598,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "330:6:15",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9603,
+                  "src": "322:14:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9597,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:16:15"
+            },
+            "returnParameters": {
+              "id": 9602,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9601,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9603,
+                  "src": "360:7:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9600,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "360:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "359:9:15"
+            },
+            "scope": 9611,
+            "src": "304:65:15",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9604,
+              "nodeType": "StructuredDocumentation",
+              "src": "374:47:15",
+              "text": " Returns all the supported assets*"
+            },
+            "functionSelector": "2acada4d",
+            "id": 9610,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllAssets",
+            "nameLocation": "433:12:15",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9605,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "445:2:15"
+            },
+            "returnParameters": {
+              "id": 9609,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9608,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9610,
+                  "src": "470:16:15",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 9606,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "470:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 9607,
+                    "nodeType": "ArrayTypeName",
+                    "src": "470:9:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "469:18:15"
+            },
+            "scope": 9611,
+            "src": "424:64:15",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9612,
+        "src": "169:322:15",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:453:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.6+commit.11564f7e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-08-05T13:09:52.910Z",
+  "devdoc": {
+    "details": "Interface that provides current price in AVAX for a given asset",
+    "kind": "dev",
+    "methods": {
+      "getPrice(bytes32)": {
+        "details": "_asset the address of the queried asset*"
+      }
+    },
+    "title": "IPriceProvider",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getAllAssets()": {
+        "notice": "Returns all the supported assets*"
+      },
+      "getPrice(bytes32)": {
+        "notice": "Returns the current price of an asset"
+      }
+    },
+    "version": 1
+  }
+}

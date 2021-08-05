@@ -1,0 +1,836 @@
+{
+  "contractName": "IAssetsExchange",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_asset",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "buyAsset",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_asset",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "sellAsset",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_asset",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_asset\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"buyAsset\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_asset\",\"type\":\"bytes32\"}],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_asset\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"sellAsset\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Basic interface for investing into assets It could be linked either to DEX or to a synthetic assets platform\",\"kind\":\"dev\",\"methods\":{\"buyAsset(bytes32,uint256)\":{\"details\":\"_asset asset code_amount amount to be bought*\"},\"getBalance(address,bytes32)\":{\"details\":\"_asset the code of an asset_user the address of queried user*\"},\"sellAsset(bytes32,uint256)\":{\"details\":\"_asset asset code_amount amount to be bought*\"}},\"title\":\"IAssetExchange\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"buyAsset(bytes32,uint256)\":{\"notice\":\"Buys selected asset with AVAX\"},\"getBalance(address,bytes32)\":{\"notice\":\"Returns the current balance of the asset held by given user\"},\"sellAsset(bytes32,uint256)\":{\"notice\":\"Sells selected asset for AVAX\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IAssetsExchange.sol\":\"IAssetsExchange\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x6bb804a310218875e89d12c053e94a13a4607cdf7cc2052f3e52bd32a0dc50a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b2ebbbe6d0011175bd9e7268b83de3f9c2f9d8d4cbfbaef12aff977d7d727163\",\"dweb:/ipfs/Qmd5c7Vxtis9wzkDNhxwc6A2QT5H9xn9kfjhx7qx44vpro\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x95098bd1d9c8dec4d80d3dedb88a0d949fa0d740ee99f2aa466bc308216ca6d5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7fec968dcd68e13961521fa3c7dd87baecad91a2653b19240e81f21cc4f3ba85\",\"dweb:/ipfs/QmaXtsYt4Mphm8XHNUfk2me1cF3ssS2SqDBNFpYAzMjomC\"]},\"project:/contracts/IAssetsExchange.sol\":{\"keccak256\":\"0xb749d6497eb93fd25b6da0e032e0bfba36d5ed70d8bfe368dcbff31b7810d4ef\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://64c66d542600527b681b0c9c2a83e14bb87978a10f670bee1bbeb3ecfb4c4042\",\"dweb:/ipfs/QmS4BA7mkhYpKvSyKVnUCyxP7eAFx76YhDGy5LZkZwfrPC\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.2;\n\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\n\n\n/**\n * @title IAssetExchange\n * @dev Basic interface for investing into assets\n * It could be linked either to DEX or to a synthetic assets platform\n */\ninterface IAssetsExchange {\n\n  /**\n   * Buys selected asset with AVAX\n   * @dev _asset asset code\n   * @dev _amount amount to be bought\n  **/\n  function buyAsset(bytes32 _asset, uint256 _amount) payable external;\n\n\n  /**\n   * Sells selected asset for AVAX\n   * @dev _asset asset code\n   * @dev _amount amount to be bought\n  **/\n  function sellAsset(bytes32 _asset, uint256 _amount) payable external;\n\n\n  /**\n   * Returns the current balance of the asset held by given user\n   * @dev _asset the code of an asset\n   * @dev _user the address of queried user\n  **/\n  function getBalance(address _user, bytes32 _asset) external view returns(uint256);\n\n}\n",
+  "sourcePath": "/Users/apple/Redstone/smart-broker/contracts/IAssetsExchange.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IAssetsExchange.sol",
+    "exportedSymbols": {
+      "Context": [
+        1094
+      ],
+      "IAssetsExchange": [
+        9567
+      ],
+      "Ownable": [
+        103
+      ]
+    },
+    "id": 9568,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9538,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:13"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
+        "file": "@openzeppelin/contracts/access/Ownable.sol",
+        "id": 9539,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 9568,
+        "sourceUnit": 104,
+        "src": "64:52:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9540,
+          "nodeType": "StructuredDocumentation",
+          "src": "119:152:13",
+          "text": " @title IAssetExchange\n @dev Basic interface for investing into assets\n It could be linked either to DEX or to a synthetic assets platform"
+        },
+        "fullyImplemented": false,
+        "id": 9567,
+        "linearizedBaseContracts": [
+          9567
+        ],
+        "name": "IAssetsExchange",
+        "nameLocation": "282:15:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 9541,
+              "nodeType": "StructuredDocumentation",
+              "src": "303:110:13",
+              "text": " Buys selected asset with AVAX\n @dev _asset asset code\n @dev _amount amount to be bought*"
+            },
+            "functionSelector": "5d8874e9",
+            "id": 9548,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "buyAsset",
+            "nameLocation": "425:8:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9543,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "442:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9548,
+                  "src": "434:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9542,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "434:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9545,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "458:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9548,
+                  "src": "450:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9544,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "450:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "433:33:13"
+            },
+            "returnParameters": {
+              "id": 9547,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "483:0:13"
+            },
+            "scope": 9567,
+            "src": "416:68:13",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9549,
+              "nodeType": "StructuredDocumentation",
+              "src": "489:110:13",
+              "text": " Sells selected asset for AVAX\n @dev _asset asset code\n @dev _amount amount to be bought*"
+            },
+            "functionSelector": "1b98d07e",
+            "id": 9556,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sellAsset",
+            "nameLocation": "611:9:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9554,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9551,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "629:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9556,
+                  "src": "621:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9550,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9553,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "645:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9556,
+                  "src": "637:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9552,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "637:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "620:33:13"
+            },
+            "returnParameters": {
+              "id": 9555,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "670:0:13"
+            },
+            "scope": 9567,
+            "src": "602:69:13",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9557,
+              "nodeType": "StructuredDocumentation",
+              "src": "676:156:13",
+              "text": " Returns the current balance of the asset held by given user\n @dev _asset the code of an asset\n @dev _user the address of queried user*"
+            },
+            "functionSelector": "c79d5ec5",
+            "id": 9566,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nameLocation": "844:10:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9562,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9559,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nameLocation": "863:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9566,
+                  "src": "855:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9558,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "855:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9561,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "878:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9566,
+                  "src": "870:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9560,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "870:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "854:31:13"
+            },
+            "returnParameters": {
+              "id": 9565,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9564,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9566,
+                  "src": "908:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9563,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "908:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "907:9:13"
+            },
+            "scope": 9567,
+            "src": "835:82:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9568,
+        "src": "272:648:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:882:13"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IAssetsExchange.sol",
+    "exportedSymbols": {
+      "Context": [
+        1094
+      ],
+      "IAssetsExchange": [
+        9567
+      ],
+      "Ownable": [
+        103
+      ]
+    },
+    "id": 9568,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9538,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:13"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
+        "file": "@openzeppelin/contracts/access/Ownable.sol",
+        "id": 9539,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 9568,
+        "sourceUnit": 104,
+        "src": "64:52:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9540,
+          "nodeType": "StructuredDocumentation",
+          "src": "119:152:13",
+          "text": " @title IAssetExchange\n @dev Basic interface for investing into assets\n It could be linked either to DEX or to a synthetic assets platform"
+        },
+        "fullyImplemented": false,
+        "id": 9567,
+        "linearizedBaseContracts": [
+          9567
+        ],
+        "name": "IAssetsExchange",
+        "nameLocation": "282:15:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 9541,
+              "nodeType": "StructuredDocumentation",
+              "src": "303:110:13",
+              "text": " Buys selected asset with AVAX\n @dev _asset asset code\n @dev _amount amount to be bought*"
+            },
+            "functionSelector": "5d8874e9",
+            "id": 9548,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "buyAsset",
+            "nameLocation": "425:8:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9543,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "442:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9548,
+                  "src": "434:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9542,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "434:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9545,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "458:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9548,
+                  "src": "450:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9544,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "450:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "433:33:13"
+            },
+            "returnParameters": {
+              "id": 9547,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "483:0:13"
+            },
+            "scope": 9567,
+            "src": "416:68:13",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9549,
+              "nodeType": "StructuredDocumentation",
+              "src": "489:110:13",
+              "text": " Sells selected asset for AVAX\n @dev _asset asset code\n @dev _amount amount to be bought*"
+            },
+            "functionSelector": "1b98d07e",
+            "id": 9556,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sellAsset",
+            "nameLocation": "611:9:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9554,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9551,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "629:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9556,
+                  "src": "621:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9550,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9553,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nameLocation": "645:7:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9556,
+                  "src": "637:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9552,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "637:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "620:33:13"
+            },
+            "returnParameters": {
+              "id": 9555,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "670:0:13"
+            },
+            "scope": 9567,
+            "src": "602:69:13",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 9557,
+              "nodeType": "StructuredDocumentation",
+              "src": "676:156:13",
+              "text": " Returns the current balance of the asset held by given user\n @dev _asset the code of an asset\n @dev _user the address of queried user*"
+            },
+            "functionSelector": "c79d5ec5",
+            "id": 9566,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBalance",
+            "nameLocation": "844:10:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9562,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9559,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nameLocation": "863:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9566,
+                  "src": "855:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9558,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "855:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9561,
+                  "mutability": "mutable",
+                  "name": "_asset",
+                  "nameLocation": "878:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9566,
+                  "src": "870:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 9560,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "870:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "854:31:13"
+            },
+            "returnParameters": {
+              "id": 9565,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9564,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9566,
+                  "src": "908:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9563,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "908:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "907:9:13"
+            },
+            "scope": 9567,
+            "src": "835:82:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9568,
+        "src": "272:648:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:882:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.6+commit.11564f7e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-08-05T13:09:52.908Z",
+  "devdoc": {
+    "details": "Basic interface for investing into assets It could be linked either to DEX or to a synthetic assets platform",
+    "kind": "dev",
+    "methods": {
+      "buyAsset(bytes32,uint256)": {
+        "details": "_asset asset code_amount amount to be bought*"
+      },
+      "getBalance(address,bytes32)": {
+        "details": "_asset the code of an asset_user the address of queried user*"
+      },
+      "sellAsset(bytes32,uint256)": {
+        "details": "_asset asset code_amount amount to be bought*"
+      }
+    },
+    "title": "IAssetExchange",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "buyAsset(bytes32,uint256)": {
+        "notice": "Buys selected asset with AVAX"
+      },
+      "getBalance(address,bytes32)": {
+        "notice": "Returns the current balance of the asset held by given user"
+      },
+      "sellAsset(bytes32,uint256)": {
+        "notice": "Sells selected asset for AVAX"
+      }
+    },
+    "version": 1
+  }
+}

@@ -1,0 +1,622 @@
+{
+  "contractName": "IRatesCalculator",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalLoans",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalDeposits",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateBorrowingRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalLoans",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalDeposits",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateDepositRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalLoans\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalDeposits\",\"type\":\"uint256\"}],\"name\":\"calculateBorrowingRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalLoans\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalDeposits\",\"type\":\"uint256\"}],\"name\":\"calculateDepositRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface defining base method for contracts implementing interest rates calculation. The calculated value could be based on the relation between funds borrowed and deposited.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"IRatesCalculator\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IRatesCalculator.sol\":\"IRatesCalculator\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IRatesCalculator.sol\":{\"keccak256\":\"0xe6a78528d1b066b12e0baf353a62131d418378db98927835e9f6ac92c715929e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://37de1dc4f868488624b13d6f85cd304a4f3b6cb0d639c7ae6b131d4d4155d7db\",\"dweb:/ipfs/QmRGUQcPfbTHpnkXRqM368KZS2AxPph5WFeRk7Z8qjL9mn\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.2;\n\n/**\n * @title IRatesCalculator\n * @dev Interface defining base method for contracts implementing interest rates calculation.\n * The calculated value could be based on the relation between funds borrowed and deposited.\n */\ninterface IRatesCalculator {\n\n    function calculateBorrowingRate(uint256 totalLoans, uint256 totalDeposits) external view returns(uint256);\n\n    function calculateDepositRate(uint256 totalLoans, uint256 totalDeposits) external view returns(uint256);\n\n}\n",
+  "sourcePath": "/Users/apple/Redstone/smart-broker/contracts/IRatesCalculator.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IRatesCalculator.sol",
+    "exportedSymbols": {
+      "IRatesCalculator": [
+        9633
+      ]
+    },
+    "id": 9634,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9613,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:16"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9614,
+          "nodeType": "StructuredDocumentation",
+          "src": "64:221:16",
+          "text": " @title IRatesCalculator\n @dev Interface defining base method for contracts implementing interest rates calculation.\n The calculated value could be based on the relation between funds borrowed and deposited."
+        },
+        "fullyImplemented": false,
+        "id": 9633,
+        "linearizedBaseContracts": [
+          9633
+        ],
+        "name": "IRatesCalculator",
+        "nameLocation": "296:16:16",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "df841eec",
+            "id": 9623,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateBorrowingRate",
+            "nameLocation": "329:22:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9619,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9616,
+                  "mutability": "mutable",
+                  "name": "totalLoans",
+                  "nameLocation": "360:10:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9623,
+                  "src": "352:18:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9615,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "352:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9618,
+                  "mutability": "mutable",
+                  "name": "totalDeposits",
+                  "nameLocation": "380:13:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9623,
+                  "src": "372:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9617,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "372:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "351:43:16"
+            },
+            "returnParameters": {
+              "id": 9622,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9621,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9623,
+                  "src": "417:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9620,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "417:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "416:9:16"
+            },
+            "scope": 9633,
+            "src": "320:106:16",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "7cd08331",
+            "id": 9632,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateDepositRate",
+            "nameLocation": "441:20:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9628,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9625,
+                  "mutability": "mutable",
+                  "name": "totalLoans",
+                  "nameLocation": "470:10:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9632,
+                  "src": "462:18:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9624,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9627,
+                  "mutability": "mutable",
+                  "name": "totalDeposits",
+                  "nameLocation": "490:13:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9632,
+                  "src": "482:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9626,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "482:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:43:16"
+            },
+            "returnParameters": {
+              "id": 9631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9630,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9632,
+                  "src": "527:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9629,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:9:16"
+            },
+            "scope": 9633,
+            "src": "432:104:16",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9634,
+        "src": "286:253:16",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:501:16"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IRatesCalculator.sol",
+    "exportedSymbols": {
+      "IRatesCalculator": [
+        9633
+      ]
+    },
+    "id": 9634,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9613,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:16"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9614,
+          "nodeType": "StructuredDocumentation",
+          "src": "64:221:16",
+          "text": " @title IRatesCalculator\n @dev Interface defining base method for contracts implementing interest rates calculation.\n The calculated value could be based on the relation between funds borrowed and deposited."
+        },
+        "fullyImplemented": false,
+        "id": 9633,
+        "linearizedBaseContracts": [
+          9633
+        ],
+        "name": "IRatesCalculator",
+        "nameLocation": "296:16:16",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "df841eec",
+            "id": 9623,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateBorrowingRate",
+            "nameLocation": "329:22:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9619,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9616,
+                  "mutability": "mutable",
+                  "name": "totalLoans",
+                  "nameLocation": "360:10:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9623,
+                  "src": "352:18:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9615,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "352:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9618,
+                  "mutability": "mutable",
+                  "name": "totalDeposits",
+                  "nameLocation": "380:13:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9623,
+                  "src": "372:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9617,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "372:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "351:43:16"
+            },
+            "returnParameters": {
+              "id": 9622,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9621,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9623,
+                  "src": "417:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9620,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "417:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "416:9:16"
+            },
+            "scope": 9633,
+            "src": "320:106:16",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "7cd08331",
+            "id": 9632,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateDepositRate",
+            "nameLocation": "441:20:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9628,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9625,
+                  "mutability": "mutable",
+                  "name": "totalLoans",
+                  "nameLocation": "470:10:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9632,
+                  "src": "462:18:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9624,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "462:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9627,
+                  "mutability": "mutable",
+                  "name": "totalDeposits",
+                  "nameLocation": "490:13:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9632,
+                  "src": "482:21:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9626,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "482:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "461:43:16"
+            },
+            "returnParameters": {
+              "id": 9631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9630,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9632,
+                  "src": "527:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9629,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "527:7:16",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "526:9:16"
+            },
+            "scope": 9633,
+            "src": "432:104:16",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9634,
+        "src": "286:253:16",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:501:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.6+commit.11564f7e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-08-05T13:09:52.911Z",
+  "devdoc": {
+    "details": "Interface defining base method for contracts implementing interest rates calculation. The calculated value could be based on the relation between funds borrowed and deposited.",
+    "kind": "dev",
+    "methods": {},
+    "title": "IRatesCalculator",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

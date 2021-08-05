@@ -1,0 +1,698 @@
+{
+  "contractName": "IBorrowersRegistry",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        }
+      ],
+      "name": "canBorrow",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getAccountForUser",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_loan",
+          "type": "address"
+        }
+      ],
+      "name": "getOwnerOfLoan",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"canBorrow\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getAccountForUser\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_loan\",\"type\":\"address\"}],\"name\":\"getOwnerOfLoan\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"IBorrowersRegistry Keeps a registry of created trading accounts to verify their borrowing rights\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IBorrowersRegistry.sol\":\"IBorrowersRegistry\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IBorrowersRegistry.sol\":{\"keccak256\":\"0x10196752b4283792d9297c340c690b1ce99e0abeea93872bb49382cb52280720\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://0dd5084a89ca5d6e9021e94da148b7395826f41173579dd02fa2117de9917b94\",\"dweb:/ipfs/Qmavm4AfhwHYDo6CsA1cXCwDS5FeDRyXBGmGNbD3wyXXsB\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.2;\n\n\n/**\n * @title IBorrowersRegistry\n * Keeps a registry of created trading accounts to verify their borrowing rights\n */\ninterface IBorrowersRegistry {\n\n  function canBorrow(address _account) external view returns(bool);\n\n  function getAccountForUser(address _user) external view returns(address);\n\n  function getOwnerOfLoan(address _loan) external view returns(address);\n\n}\n",
+  "sourcePath": "/Users/apple/Redstone/smart-broker/contracts/IBorrowersRegistry.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IBorrowersRegistry.sol",
+    "exportedSymbols": {
+      "IBorrowersRegistry": [
+        9592
+      ]
+    },
+    "id": 9593,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9569,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:14"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9570,
+          "nodeType": "StructuredDocumentation",
+          "src": "65:117:14",
+          "text": " @title IBorrowersRegistry\n Keeps a registry of created trading accounts to verify their borrowing rights"
+        },
+        "fullyImplemented": false,
+        "id": 9592,
+        "linearizedBaseContracts": [
+          9592
+        ],
+        "name": "IBorrowersRegistry",
+        "nameLocation": "193:18:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "0e7fc864",
+            "id": 9577,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canBorrow",
+            "nameLocation": "226:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9573,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9572,
+                  "mutability": "mutable",
+                  "name": "_account",
+                  "nameLocation": "244:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9577,
+                  "src": "236:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9571,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "235:18:14"
+            },
+            "returnParameters": {
+              "id": 9576,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9575,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9577,
+                  "src": "276:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9574,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "275:6:14"
+            },
+            "scope": 9592,
+            "src": "217:65:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "e59ec38d",
+            "id": 9584,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAccountForUser",
+            "nameLocation": "295:17:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9579,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nameLocation": "321:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9584,
+                  "src": "313:13:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9578,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "312:15:14"
+            },
+            "returnParameters": {
+              "id": 9583,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9582,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9584,
+                  "src": "350:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9581,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "350:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "349:9:14"
+            },
+            "scope": 9592,
+            "src": "286:73:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "5b012546",
+            "id": 9591,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOwnerOfLoan",
+            "nameLocation": "372:14:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9586,
+                  "mutability": "mutable",
+                  "name": "_loan",
+                  "nameLocation": "395:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9591,
+                  "src": "387:13:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9585,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "387:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "386:15:14"
+            },
+            "returnParameters": {
+              "id": 9590,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9589,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9591,
+                  "src": "424:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9588,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "423:9:14"
+            },
+            "scope": 9592,
+            "src": "363:70:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9593,
+        "src": "183:253:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:398:14"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IBorrowersRegistry.sol",
+    "exportedSymbols": {
+      "IBorrowersRegistry": [
+        9592
+      ]
+    },
+    "id": 9593,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9569,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:14"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9570,
+          "nodeType": "StructuredDocumentation",
+          "src": "65:117:14",
+          "text": " @title IBorrowersRegistry\n Keeps a registry of created trading accounts to verify their borrowing rights"
+        },
+        "fullyImplemented": false,
+        "id": 9592,
+        "linearizedBaseContracts": [
+          9592
+        ],
+        "name": "IBorrowersRegistry",
+        "nameLocation": "193:18:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "0e7fc864",
+            "id": 9577,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "canBorrow",
+            "nameLocation": "226:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9573,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9572,
+                  "mutability": "mutable",
+                  "name": "_account",
+                  "nameLocation": "244:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9577,
+                  "src": "236:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9571,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "235:18:14"
+            },
+            "returnParameters": {
+              "id": 9576,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9575,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9577,
+                  "src": "276:4:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 9574,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "275:6:14"
+            },
+            "scope": 9592,
+            "src": "217:65:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "e59ec38d",
+            "id": 9584,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAccountForUser",
+            "nameLocation": "295:17:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9579,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nameLocation": "321:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9584,
+                  "src": "313:13:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9578,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "312:15:14"
+            },
+            "returnParameters": {
+              "id": 9583,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9582,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9584,
+                  "src": "350:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9581,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "350:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "349:9:14"
+            },
+            "scope": 9592,
+            "src": "286:73:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "5b012546",
+            "id": 9591,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOwnerOfLoan",
+            "nameLocation": "372:14:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9587,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9586,
+                  "mutability": "mutable",
+                  "name": "_loan",
+                  "nameLocation": "395:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9591,
+                  "src": "387:13:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9585,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "387:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "386:15:14"
+            },
+            "returnParameters": {
+              "id": 9590,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9589,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9591,
+                  "src": "424:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9588,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "423:9:14"
+            },
+            "scope": 9592,
+            "src": "363:70:14",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9593,
+        "src": "183:253:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:398:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.6+commit.11564f7e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-08-05T13:09:52.909Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "title": "IBorrowersRegistry Keeps a registry of created trading accounts to verify their borrowing rights",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
